@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import TagSidebar from "./components/TagSidebar.vue";
+import RightDrawer from "./components/RightDrawer.vue";
+
 </script>
+
 <template>
   <div class="app-layout">
     <main class="main-content">
       <!-- Your main page content here -->
     </main>
-    <TagSidebar />
+    <right-drawer>
+      <TagSidebar />
+    </right-drawer>
   </div>
 </template>
 
