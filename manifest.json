@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "e621 Tag Collector (Vue)",
+  "version": "1.0",
+  "description": "Adds a Vue-powered sidebar to grab and copy tags from e621.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "content_scripts": [
+    {
+      "matches": ["*://e621.net/*"],
+      "js": ["src/main.ts"]
+    }
+  ]
+}
