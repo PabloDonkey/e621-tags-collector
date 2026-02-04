@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import TagSidebar from './components/TagSidebar.vue'
+import App from './app.vue'
 
-const app = createApp(TagSidebar)
+const app = createApp(App)
 const container = document.createElement('div')
 container.id = 'tag-collector-app'
 document.body.appendChild(container)
