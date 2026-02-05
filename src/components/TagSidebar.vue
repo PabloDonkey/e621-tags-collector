@@ -26,6 +26,7 @@ const extractTags = () => {
     const extractedTags = liTags
       .map((li) => (li as any).dataset.name)
       .filter((tag): tag is string => !!tag)
+      .map((tag) => decodeURIComponent(tag)) // Decode URL-encoded characters
 
     tags.value = extractedTags.map((tag) => ({
       name: tag,
