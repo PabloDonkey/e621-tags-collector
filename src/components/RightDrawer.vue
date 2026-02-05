@@ -34,8 +34,7 @@ const close = () => {
   right: 0;
   width: 340px;
   height: 100vh;
-  background: #fff;
-  box-shadow: -2px 0 16px rgba(0,0,0,0.18);
+  background: #2a2832;
   z-index: 9999;
   display: flex;
   align-items: stretch;
@@ -59,6 +58,12 @@ const close = () => {
   font-size: 24px;
   cursor: pointer;
   z-index: 1;
+  color: #2a2832;
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
 }
 
 .drawer-slide-enter-active,
@@ -72,11 +77,19 @@ const close = () => {
 
 .open-sidebar-btn {
   position: fixed;
-  top: 224px;
-  right: 8px;
+  top: 160px;
+  right: 16px;
   z-index: 9998;
 }
+
 .open-sidebar-btn:hover {
   background: rgba(0,0,0,0.18);
+}
+
+@media (max-width: 800px) {
+  .open-sidebar-btn {
+    top: 224px;
+    right: 8px;
+  }
 }
 </style>

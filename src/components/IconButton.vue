@@ -1,21 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { useIcon } from '../composables/useIcon'
 
-declare global {
-  namespace globalThis {
-    var chrome: any
-  }
-}
-
-const iconSrc = ref('')
-
-onMounted(() => {
-  if (typeof chrome !== 'undefined' && chrome.runtime) {
-    iconSrc.value = chrome.runtime.getURL('icon_1024.png')
-  } else {
-    iconSrc.value = '/icon_1024.png'
-  }
-})
+const { iconSrc } = useIcon()
 </script>
 
 <template>

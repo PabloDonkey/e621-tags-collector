@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useIcon } from '../composables/useIcon'
+
+const { iconSrc } = useIcon()
 
 interface Tag {
   name: string
@@ -90,7 +93,7 @@ onMounted(() => {
 <template>
   <div class="sidebar">
     <div class="sidebar-header">
-      <h2>🐾 Tag Collector</h2>
+      <h2> <img :src="iconSrc" alt="app icon"/> Tag Collector</h2>
     </div>
 
     <!-- Feedback message -->
@@ -146,8 +149,8 @@ onMounted(() => {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #2a2832;
+  color: #fff;
   padding: 0;
   overflow: hidden;
   font-family: system-ui, -apple-system, sans-serif;
@@ -155,25 +158,37 @@ onMounted(() => {
 
 .sidebar-header {
   padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  background: #1a1620;
+  border-bottom: 1px solid #3d3745;
 }
 
 .sidebar-header h2 {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-header img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .feedback-message {
   padding: 8px 12px;
-  background: rgba(76, 175, 80, 0.3);
-  border: 1px solid rgba(76, 175, 80, 0.5);
-  border-radius: 4px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  border-radius: 6px;
   font-size: 12px;
   text-align: center;
   margin: 8px;
   animation: slideIn 0.3s ease-out;
+  color: #4caf50;
 }
 
 @keyframes slideIn {
@@ -191,9 +206,10 @@ onMounted(() => {
   display: flex;
   justify-content: space-around;
   padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1620;
+  border-bottom: 1px solid #3d3745;
   font-size: 12px;
+  color: #b0a8b8;
 }
 
 .tag-list-panel {
@@ -204,43 +220,45 @@ onMounted(() => {
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #3d3745;
 }
 
 .tag-item {
   cursor: pointer;
   padding: 6px 10px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: #3d3745;
   user-select: none;
   white-space: nowrap;
   transition: all 0.2s ease;
   font-size: 13px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #4d4555;
+  color: #e0d8e8;
 }
 
 .tag-item:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+  background: #4d4555;
+  color: #fff;
 }
 
 .tag-item.selected {
-  background: #4caf50;
+  background: #667eea;
   color: white;
-  border-color: #45a049;
+  border-color: #5568d3;
   font-weight: 600;
 }
 
 .tag-item.selected:hover {
-  background: #45a049;
+  background: #5568d3;
 }
 
 .empty-state {
   width: 100%;
   text-align: center;
   padding: 40px 20px;
-  opacity: 0.7;
+  opacity: 0.6;
   font-size: 13px;
+  color: #b0a8b8;
 }
 
 .button-group {
@@ -271,25 +289,26 @@ onMounted(() => {
 }
 
 .btn-primary {
-  background: rgba(255, 255, 255, 0.3);
+  background: #667eea;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #5568d3;
 }
 
 .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: #5568d3;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #3d3745;
+  color: #e0d8e8;
+  border: 1px solid #4d4555;
   font-size: 12px;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: #4d4555;
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -299,15 +318,15 @@ onMounted(() => {
 }
 
 .tag-list-panel::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: #1a1620;
 }
 
 .tag-list-panel::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: #4d4555;
   border-radius: 3px;
 }
 
 .tag-list-panel::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: #5d5565;
 }
 </style>
