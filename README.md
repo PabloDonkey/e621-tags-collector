@@ -1,4 +1,6 @@
-# e621 Tag Collector (Vue + TypeScript + Vite)
+# 🐾 e621 Tag Collector (Vue + TypeScript + Vite)
+
+<img src="public/icon_1024.png" alt="e621 Tag Collector Icon" width="128" height="128" />
 
 A Chrome extension that adds a Vue-powered sidebar to e621.net, allowing you to easily grab, select, and copy tags from posts.
 
