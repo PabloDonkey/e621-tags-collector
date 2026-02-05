@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "e621 Tag Collector (Vue)",
+  "name": "e621 Tag Collector (BETA)",
   "version": "1.0",
-  "description": "Adds a Vue-powered sidebar to grab and copy tags from e621.",
+  "description": "Adds a Vue-powered sidebar to grab and copy tags from e621. THIS IS A BETA RELEASE. USE AT YOUR OWN RISK.",
   "permissions": ["activeTab", "clipboardWrite"],
   "content_scripts": [
     {
