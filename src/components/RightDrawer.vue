@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { defineEmits } from 'vue'
 import { ref } from "vue";
+import IconButton from "./IconButton.vue";
 
-const emit = defineEmits(['update:modelValue'])
 const showDrawer = ref(false)
 
 const close = () => {
@@ -11,10 +10,10 @@ const close = () => {
 </script>
 
 <template>
-  <button v-if="!showDrawer"
+  <IconButton v-if="!showDrawer"
           @click="showDrawer = true"
           class="open-sidebar-btn"
-          aria-label="Open Sidebar">Open Sidebar</button>
+          aria-label="Open Sidebar">Open Sidebar</IconButton>
   <transition name="drawer-slide">
     <div v-if="showDrawer"
          class="right-drawer"
@@ -73,19 +72,9 @@ const close = () => {
 
 .open-sidebar-btn {
   position: fixed;
-  top: 160px;
-  right: 32px;
+  top: 224px;
+  right: 8px;
   z-index: 9998;
-  background: rgba(255,255,255,0.3);
-  border: none;
-  border-radius: 10%;
-  width: 36px;
-  height: 36px;
-  font-size: 20px;
-  color: #333;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: background 0.2s;
 }
 .open-sidebar-btn:hover {
   background: rgba(0,0,0,0.18);

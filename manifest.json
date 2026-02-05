@@ -9,5 +9,20 @@
       "matches": ["*://e621.net/posts/*"],
       "js": ["src/main.ts"]
     }
+  ],
+  "icons": {
+    "16": "icon_1024.png",
+    "32": "icon_1024.png",
+    "48": "icon_1024.png",
+    "128": "icon_1024.png",
+    "256": "icon_1024.png",
+    "512": "icon_1024.png",
+    "1024": "icon_1024.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon_1024.png"],
+      "matches": ["https://e621.net/*"]
+    }
   ]
 }
